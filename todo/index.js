@@ -59,11 +59,11 @@ app.get("/todos", function(req, res){
 });
 
 function auth(req, res, next){
-  const token =  req.header.token
+  const token = req.headers.token;
   const decodeData = jwt.verify(token, JWT_SECRET);
 
   if(decodeData){
-    req.userId = decodedData.userId;
+    req.userId = decodeData.id;
     next();
 
   } else {
