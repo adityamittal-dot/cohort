@@ -1,6 +1,4 @@
 const mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost:27017/todo-app"); // Add your actual MongoDB connection string here
-
 
 const Schema = mongoose.Schema;
 const ObjectId = Schema.ObjectId;
