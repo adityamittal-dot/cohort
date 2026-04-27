@@ -15,10 +15,16 @@ app.post("/signup", async function(req, res){
 
   const requiredBody = z.object({
     email: z.string().min(3).max(100).email(),
-    name: z.string(),
-    password: z.string()
+    name: z.string().min(3).max(100),
+    password: z.string().min(3).max(30)
   })
   const parsedDataWithSuccess = requiredBody.safeParse(req.body); 
+
+  if (!parsedDataWithSuccess.success) {
+    return res.status(411).json({
+      message: "invalid input"
+    })
+  }
 
   const email = req.body.email;
   const password = req.body.password;
