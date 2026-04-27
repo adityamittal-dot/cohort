@@ -1,4 +1,5 @@
 const express = require("express");
+require("dotenv").config();
 const {UserModel, TodoModel} = require("./db");
 const jwt = require("jsonwebtoken");
 const JWT_SECRET = "adityamittal@gmail.com";
@@ -6,7 +7,7 @@ const mongoose = require("mongoose");
 const { z } =  require("zod");
 
 
-mongoose.connect("mongodb+srv://admin1:nN3BCDMchYxgD02D@cluster101.z7hsae0.mongodb.net/");
+mongoose.connect(process.env.MONGO_URI);
 
 const app = express();
 app.use(express.json());
