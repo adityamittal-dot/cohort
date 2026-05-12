@@ -1,22 +1,32 @@
-import { postComponent } from "./post";
+import { useState } from "react";
+import { PostComponent } from "./post";
 
 function App(){
 
   const[post, setPost] = useState([]);
 
-  const postComponent = post.map(post => <postComponent
-    name={post.name}
-    subtitle={post.subtitle}
-    time={post.time}
-    image={post.image}
-    description={post.description}
+  const postComponents = post.map((p, index) => <PostComponent
+    key={index}
+    name={p.name}
+    subtitle={p.subtitle}
+    time={p.time}
+    image={p.image}
+    description={p.description}
   />)
 
   // originally it was array of objects then we converted it to an array of objects and passed it into postComponents
   //this is how to render a bunch of array of objects to seperate components
 
   function addPost(){
+    setPost([...post, {
+      name: "aditya",
+      subtitle: "how to grow",
+      time: "2m ago",
+      image: "",
+      description: "howwwwwwww tooooooooo growwwwwww"
+    }
 
+    ])
   }
 
   return (
@@ -24,7 +34,7 @@ function App(){
       <button onClick={addPost}> ADD POST </button>
       <div style={{display: "flex", justifyContent: "center"}}>
         <div>
-          {postComponent}
+          {postComponents}
         </div>
       </div>
     </div>

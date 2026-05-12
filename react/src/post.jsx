@@ -1,8 +1,8 @@
 const style = { width: 200, backgroundColor:"#252525", borderRadius: 10, borderColor: "gray", borderWidth: 1, padding: 20 }
 
-export function postComponent({name, subtitle, time, image, description}) {
+export function PostComponent({name, subtitle, time, image, description}) {
   return <div style={style}>
-    <div style ={{display: 'flex', alingItem: 'center'}}>
+    <div style={{display: 'flex', alignItems: 'center'}}>
       <img src = {image} style={{
         width: 30,
         height: 30,
