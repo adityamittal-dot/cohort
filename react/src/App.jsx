@@ -53,9 +53,13 @@ function App(){
     setCount[c => c + 1];
   }
 
-  useEffect( function() {
+  useEffect( function() { // this effect run this logic only once on mount
     setInterval(increment, 1000);
   }, [])
+
+  useEffect( function() {
+    setInterval(increment, 1000); // if the object in dependency array changes or updates, this useeffect will run 
+  }, [count]);
 
   return <div>
     {count}
