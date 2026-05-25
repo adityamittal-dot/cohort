@@ -66,19 +66,51 @@
 //   </div>
 // }
 
-function App(){
-  return <div style={{display: "flex"}}>
-    <Card>
-      high there!
-    </Card>
+// function App(){
+//   return <div style={{display: "flex"}}>
+//     <Card>
+//       high there!
+//     </Card>
+//     <Card>
+//       <div style={{color: "cyan"}}>
+//         what do you want?
+//         <input type={"text"}/>
+//       </div>
+//     </Card>
+//   </div>
+// }
+
+// function Card({children}){
+//   return <div style={{background: 'red', color:'white', borderRadius: 10, padding: 10, margin: 10}}>
+//     {children}
+
+//   </div>
+// }
+
+// export default App
+
+import React from 'react';
+
+const App = () => {
+  const todos = [{
+    title: "go to gym",
+    done: false
+  }, {
+    title: "go to school",
+    done: true
+  }];
+
+  const todoCompo = todos.map(todos => <Todos title={todos.title} done={todos.done} />)
+
+  return <div>
+    {todoCompo}
+  </div>
+};
+
+function Todos({title, done}){
+  return <div>
+    {title} - {done ? "done" : "not done"}
   </div>
 }
 
-function Card({children}){
-  return <div style={{background: 'red', color:'white', borderRadius: 10, padding: 10, margin: 10}}>
-    {children}
-
-  </div>
-}
-
-export default App
+export default App;
