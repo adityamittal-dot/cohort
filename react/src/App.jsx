@@ -44,24 +44,41 @@
 
 // export default App;
 
-import {useEffect, useState} from "react";
+// import {useEffect, useState} from "react";
+
+// function App(){
+//   const [count, setCount] = useState(1);
+
+//   function increment(){
+//     setCount[c => c + 1];
+//   }
+
+//   useEffect( function() { // this effect run this logic only once on mount
+//     setInterval(increment, 1000);
+//   }, [])
+
+//   useEffect( function() {
+//     setInterval(increment, 1000); // if the object in dependency array changes or updates, this useeffect will run 
+//   }, [count]);
+
+//   return <div>
+//     {count}
+//   </div>
+// }
 
 function App(){
-  const [count, setCount] = useState(1);
-
-  function increment(){
-    setCount[c => c + 1];
-  }
-
-  useEffect( function() { // this effect run this logic only once on mount
-    setInterval(increment, 1000);
-  }, [])
-
-  useEffect( function() {
-    setInterval(increment, 1000); // if the object in dependency array changes or updates, this useeffect will run 
-  }, [count]);
-
-  return <div>
-    {count}
+  return <div style={{display: "flex"}}>
+    <Card>
+      high there!
+    </Card>
   </div>
 }
+
+function Card({children}){
+  return <div style={{background: 'red', color:'white', borderRadius: 10, padding: 10, margin: 10}}>
+    {children}
+
+  </div>
+}
+
+export default App
