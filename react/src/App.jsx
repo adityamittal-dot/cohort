@@ -93,23 +93,27 @@ import React from 'react';
 
 const App = () => {
   const todos = [{
+    key: 1,
     title: "go to gym",
     done: false
   }, {
+    key: 2,
     title: "go to school",
     done: true
   }];
 
-  const todoCompo = todos.map(todos => <Todos title={todos.title} done={todos.done} />)
+  const todoCompo = todos.map(todos => <Todos key={todos.key} title={todos.title} done={todos.done} />)
 
   return <div>
     {todoCompo}
   </div>
 };
 
-function Todos({title, done}){
+function Todos({title, done, key}){
   return <div>
-    {title} - {done ? "done" : "not done"}
+    {key}
+    {title} -  
+    {done ? "done" : "not done"}
   </div>
 }
 
