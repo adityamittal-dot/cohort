@@ -1,9 +1,10 @@
+
 import React from "react";
 
 function App(){
-  return <div>
+  return <div className="bg-blue-500">
     <h1>hello there..</h1>
   </div>
 }
 
-export default App
+export default App 
