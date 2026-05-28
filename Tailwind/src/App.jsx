@@ -1,4 +1,6 @@
 import React from "react";
+import { Button } from "./components/button";
+import { Input } from "./components/input";
 
 function App() {
   return (
@@ -6,16 +8,15 @@ function App() {
       <h1 className="text-xl font-bold">verify your age</h1>
       <br />
       <p>please confirm your birth year</p>
-      <input
+      <Input
         type="number"
         placeholder="your birth year"
-        className="text-black px-2 py-1 rounded"
       />
       <br />
       <br />
-      <button className="bg-white text-blue-500 px-4 py-1.5 rounded font-bold">
+      <Button disabled={true} style={{ flex: 2 }}>
         CONTINUEeeee
-      </button>
+      </Button>
     </div>
   );
 }
