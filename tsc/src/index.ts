@@ -23,3 +23,18 @@
 function greet(firstName: string){
   console.log("hello" + firstName);
 }
+
+function isLegal(age: number): boolean{
+  if(age >= 18){
+    return true;
+  } else {return false;}
+}
+
+console.log(isLegal(21));
+
+function delayedCall(fn: ()=> void){
+  setTimeout(fn, 1000);
+}
+function fn(){
+  console.log("im called after one second ")
+}
